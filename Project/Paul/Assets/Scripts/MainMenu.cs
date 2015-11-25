@@ -62,6 +62,9 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	void challengeMenuFunc(int id){
+		if(GUILayout.Button("Challenge 1")){
+			Application.LoadLevel(2);
+		}
 		if(GUILayout.Button("Return to main menu")){
 			menu = 0;
 		}
