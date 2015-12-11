@@ -18,7 +18,16 @@ public class Health : MonoBehaviour {
 	void takeDamage(){
 		health--;
 		if(health==0){
-			Application.Quit();
+			restartFromLastCheckpoint();
+		}
+	}
+
+	void restartFromLastCheckpoint(){
+		Application.LoadLevel(Application.loadedLevel);
+		foreach(GameObject checkpoint in GameObject.FindGameObjectsWithTag("Checkpoint")){
+			if (checkpoint.GetComponent<Checkpoint>().returnCurrentCheckpoint() == true){
+				this.transform.position = checkpoint.transform.position;
+			}
 		}
 	}
 }
