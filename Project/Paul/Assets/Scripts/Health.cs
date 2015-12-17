@@ -4,7 +4,7 @@ using System.Collections;
 public class Health : MonoBehaviour {
 
 
-	int health = 5;
+	public int health = 5;
 	// Use this for initialization
 	void Start () {
 	

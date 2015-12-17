@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Vision : MonoBehaviour {
+public class CollideDamage : MonoBehaviour {
 
 	bool triggered = false;
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
-	void OnTriggerEnter2D(Collider2D collider){
+	void OnCollisionEnter2D(Collision2D collider){
 		if(triggered==false){
 			if(collider.gameObject.tag == "Paul"){
 				Transform paulTrans = collider.transform;
@@ -24,9 +24,11 @@ public class Vision : MonoBehaviour {
 			}
 		}
 	}
-	void OnTriggerExit2D(Collider2D collider){
+	void OnCollisionExit2D(Collision2D collider){
+		
 		if(collider.gameObject.tag == "Paul"){
 			triggered = false;
 		}
 	}
+
 }
